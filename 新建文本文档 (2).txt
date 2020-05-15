@@ -1,0 +1,38 @@
+HTML代码:
+顶部
+<div style="height:2000px;background-color:blue" class="content" id="content">
+	<img src="https://res.dcdev.net/dcdev/v1.0.3/assets/images/close.svg" class="img" id="img"/>
+</div>
+底部
+
+js代码
+$(function () {
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 548) {
+                     $("#img").fadeIn(2000);
+                }
+                else {
+                     $("#img").fadeOut(2000);
+                }
+            });
+            $("#img").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 300); 
+                return false;
+            }); 
+        });
+    });
+
+
+CSS代码:
+.content{
+	position: relative;
+}
+.img{
+	position: absolute;
+	right:0;
+	bottom:100px;
+	width:30px;
+	height:30px;
+	display:none;
+}
